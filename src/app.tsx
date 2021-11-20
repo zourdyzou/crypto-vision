@@ -1,11 +1,28 @@
+import { makeStyles, Theme } from "@material-ui/core";
 import React from "react";
-
+import { Route, Switch } from "react-router-dom";
 import { Header } from "./components/molecules/Header";
+import { CoinPage } from "./pages/Coin";
+import { HomePage } from "./pages/Home";
+
+const useStyles = makeStyles((theme: Theme) => ({
+  App: {
+    backgroundColor: "#14161a",
+    color: "white",
+    minHeight: "100vh",
+  },
+}));
 
 export const App: React.FC = () => {
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.App}>
       <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/coin/id" component={CoinPage} />
+      </Switch>
     </div>
   );
 };
