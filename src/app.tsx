@@ -5,6 +5,8 @@ import { Header } from "./components/molecules/Header";
 import { CoinPage } from "./pages/Coin";
 import { HomePage } from "./pages/Home";
 
+import "./app.css";
+
 const useStyles = makeStyles((theme: Theme) => ({
   App: {
     backgroundColor: "#14161a",

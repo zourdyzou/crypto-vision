@@ -31,6 +31,10 @@ export const AppProvider = ({ children }: Props): JSX.Element => {
       setSymbol("$");
     } else if (currency === "EUR") {
       setSymbol("€");
+    } else if (currency === "GBP") {
+      setSymbol("£");
+    } else if (currency === "CHF") {
+      setSymbol("Fr.");
     }
   }, [currency]);
 

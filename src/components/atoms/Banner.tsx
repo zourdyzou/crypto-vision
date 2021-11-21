@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, makeStyles, Theme, Typography } from "@material-ui/core";
+import { CarouselCard } from "../molecules/Carousel";
 
 const useStyles = makeStyles((theme: Theme) => ({
   banner: {
@@ -41,7 +42,7 @@ export const Banner: React.FC = () => {
               fontFamily: "Montserrat",
             }}
           >
-            Crypto Vision
+            Crypto Hunter
           </Typography>
           <Typography
             variant="subtitle2"
@@ -51,9 +52,10 @@ export const Banner: React.FC = () => {
               fontFamily: "Montserrat",
             }}
           >
-            Get all the info regarding your favorite Crypto Currency
+            Get all the Info regarding your favorite Crypto Currency
           </Typography>
         </div>
+        <CarouselCard />
       </Container>
     </div>
   );
