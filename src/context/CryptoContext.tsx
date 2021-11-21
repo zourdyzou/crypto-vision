@@ -8,10 +8,10 @@ import React, {
 } from "react";
 
 export interface AppContextTypes {
-  currency: string;
-  symbol: string;
-  setCurrency: Dispatch<SetStateAction<string>>;
-  setSymbol: Dispatch<SetStateAction<string>>;
+  currency: string | null;
+  symbol: string | null;
+  setCurrency: Dispatch<SetStateAction<string>> | null;
+  setSymbol: Dispatch<SetStateAction<string>> | null;
 }
 
 interface Props {
