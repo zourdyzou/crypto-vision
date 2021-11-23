@@ -42,5 +42,12 @@ export interface SingleCoin {
       pln: number;
       usd: number;
     };
+    market_cap: {
+      chf: number;
+      eur: number;
+      gbp: number;
+      pln: number;
+      usd: number;
+    };
   };
 }

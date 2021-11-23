@@ -95,7 +95,11 @@ export const CarouselCard: React.FC = () => {
             : 0;
 
         return (
-          <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
+          <Link
+            key={coin.id}
+            className={classes.carouselItem}
+            to={`/coins/${coin.id}`}
+          >
             <img
               src={coin?.image}
               alt={coin.name}

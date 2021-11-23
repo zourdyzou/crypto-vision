@@ -1,7 +1,7 @@
 export const coinLists = (currency: string) =>
   `https://coingecko.p.rapidapi.com/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
 
-export const singleCoin = (id: string) =>
+export const singleCoinURL = (id: string) =>
   `https://coingecko.p.rapidapi.com/coins/${id}`;
 
 export const historicalChartURL = (

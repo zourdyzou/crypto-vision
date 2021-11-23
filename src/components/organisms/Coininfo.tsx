@@ -17,7 +17,7 @@ import { chartDays } from "../../config/data";
 import { SelectButton } from "../atoms/SelectButton";
 
 interface Props {
-  coin: SingleCoin;
+  coin: SingleCoin | any;
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -57,7 +57,7 @@ export const CoinInfo: React.FC<Props> = ({ coin }) => {
   const fetchCryptoDataHistory = useCallback(async () => {
     try {
       const results = await axios.get(
-        historicalChartURL("bitcoin", days, currency),
+        historicalChartURL(coin?.id, days, currency),
         {
           method: "GET",
           headers: {
@@ -83,7 +83,7 @@ export const CoinInfo: React.FC<Props> = ({ coin }) => {
         `cannot fetch the data, maybe you need to forge your internet connection! ${error.message}`
       );
     }
-  }, [currency, days]);
+  }, [currency, days, coin.id]);
 
   useEffect(() => {
     fetchCryptoDataHistory();
@@ -92,7 +92,7 @@ export const CoinInfo: React.FC<Props> = ({ coin }) => {
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.container}>
-        {historicalChart?.prices ? (
+        {!historicalChart?.prices ? (
           <CircularProgress
             style={{ color: "gold" }}
             size={250}
