@@ -4,7 +4,7 @@ export const coinLists = (currency: string) =>
 export const singleCoin = (id: string) =>
   `https://coingecko.p.rapidapi.com/coins/${id}`;
 
-export const historicalChart = (
+export const historicalChartURL = (
   id: string,
   days: number = 365,
   currency: string

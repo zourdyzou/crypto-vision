@@ -23,7 +23,7 @@ export const App: React.FC = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/coin/id" component={CoinPage} />
+        <Route exact path="/coins/:id" component={CoinPage} />
       </Switch>
     </div>
   );
